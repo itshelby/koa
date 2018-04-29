@@ -1,0 +1,14 @@
+{
+  "name": "koa",
+  "version": "0.0.1",
+  "scripts": {
+    "go": "node app"
+  },
+  "description": "Build koa for quick start of web application development.",
+  "main": "app.js",
+  "author": "itshelby",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.1"
+  }
+}
