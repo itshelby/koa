@@ -9,6 +9,7 @@
   "author": "itshelby",
   "license": "MIT",
   "dependencies": {
+    "config": "^1.30.0",
     "koa": "^2.5.1"
   }
 }

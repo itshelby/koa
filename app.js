@@ -5,4 +5,4 @@ app.use((ctx, next) => {
   ctx.body = 'Hello!'
 })
 
-app.listen(3000)
+app.listen(config.get('port'))
