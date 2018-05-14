@@ -3,20 +3,14 @@ const app = new Koa()
 
 const config = require('config')
 
-const Router = require('koa-router')
-const router = new Router()
+const usersRoutes = require('./routes/users')
 
 const path = require('path')
 const fs = require('fs')
 
-const handlers = fs.readdirSync(path.join(__dirname, 'handlers')).sort()
-handlers.forEach(handler => require('./handlers/' + handler).init(app))
+const handlers = fs.readdirSync(path.join(__dirname, 'middlewares')).sort()
+handlers.forEach(handler => require('./middlewares/' + handler).init(app))
 
-router
-  .get('/', (ctx, next) => {
-    ctx.body = 'Hello!'
-  })
+app.use(usersRoutes.routes())
 
-app.use(router.routes())
-
-app.listen(config.get('port'))
+app.listen(3000)
